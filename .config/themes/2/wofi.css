@@ -1,0 +1,84 @@
+@define-color main-bg-color rgba(33, 25, 40, 0.6);
+@define-color accent-color rgb (101, 198, 127);
+@define-color accent-color-brighter rgb (124, 244, 156);
+
+window {
+	margin: 0px;
+	border: 5px solid transparent;
+	/* background-color: #cdd6f4; */
+	background-color: @main-bg-color;
+	border-radius: 20px;
+	font-size: 20px;
+}
+
+#input {
+	/* padding: 4px; */
+	padding-left: 20px;
+	padding-right: 10px;
+	margin: 10px;
+	margin-bottom: 0;
+	border: none;
+	border-radius: 15px;
+	color: #cdd6f4;
+	font-weight: bold;
+	background-color: rgba(101, 61, 136, 0.4);
+	outline: none;
+	text-decoration: none;
+}
+
+#input:focus {
+	border: 0px solid #1e1e2e;
+	margin-bottom: 0px;
+}
+
+#inner-box {
+	margin: 10px;
+	margin-top: 0px;
+	border: 10px solid transparent;
+	color: #cdd6f4;
+	font-weight: bold;
+	background: none;
+	border-radius: 15px;
+}
+
+#outer-box {
+	margin: 0px;
+	border: none;
+	border-radius: 15px;
+	background-color: @main-bg-color;
+}
+
+#scroll {
+	margin-top: 5px;
+	border: none;
+	border-radius: 15px;
+	margin-bottom: 5px;
+	/* background: rgb(255,255,255); */
+}
+
+#img:selected {
+	border-radius: 10px;
+	background-color: @accent-color;
+}
+
+#text:selected {
+	color: #151515;
+	margin: 0px 0px;
+	border: none;
+	border-radius: 15px;
+	background-color: @accent-color;
+}
+
+#entry {
+	margin: 0px 0px;
+	border: none;
+	border-radius: 10px;
+	background-color: transparent;
+}
+
+#entry:selected {
+	margin: 0px 0px;
+	border: none;
+	border-radius: 10px;
+	background-color: @accent-color;
+}

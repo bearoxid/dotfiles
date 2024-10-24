@@ -1,0 +1,147 @@
+* {
+	border: none;
+	border-radius: 0;
+	font-family: "JetBrainsMono Nerd Font";
+	font-weight: bold;
+	font-size: 16px;
+	min-height: 0;
+}
+
+window#waybar {
+	background: rgba(21, 18, 27, 0);
+	color: #f6f7fc;
+}
+
+/* window#waybar>box {
+    padding: 10px;
+ */
+
+/* .modules-left {
+    background: rgba(23, 23, 23, 0.6);
+    border: 1px solid #fff;
+    border-radius: 16px;
+} */
+
+.modules-center {
+	background: rgba(157, 9, 17, 0);
+	border: 0px solid #fff;
+	border-radius: 5px;
+}
+
+.modules-right {
+	background: rgba(35, 35, 35, 0.6);
+	border: 1px solid #fff;
+	border-radius: 8px;
+}
+
+tooltip {
+	background: rgba(35, 35, 35, 0.8);
+	border-radius: 10px;
+	border-width: 2px;
+	border-style: solid;
+	border-color: #11111b;
+}
+
+tooltip label {
+	color: #cdd6f4;
+}
+
+#workspaces button {
+	padding: 2px 12px;
+	margin-right: 5px;
+	/* color: #f6f7fc; */
+	color: #151515;
+	background: #9d0911;
+	border-radius: 16px;
+
+	animation: gradient_f 20s ease-in infinite;
+	/* transition: all 0.5s cubic-bezier(0.55, -0.68, 0.48, 1.682); */
+	transition: all 0.5s cubic-bezier(0, .66, .55, 1.07);
+}
+
+#workspaces button label {}
+
+#workspaces button.active {
+	padding: 2px 20px;
+	color: #000000;
+	background: #ed1717;
+	border-radius: 16px;
+
+	animation: gradient_f 20s ease-in infinite;
+	/* transition: all 0.5s cubic-bezier(0.55, -0.68, 0.48, 1.682); */
+	transition: all 0.5s cubic-bezier(0, .66, .55, 1.07);
+}
+
+#workspaces button:hover {
+	color: #000000;
+	background: #ed1717;
+	border-radius: 10px;
+
+	animation: gradient_f 20s ease-in infinite;
+	/* transition: all 0.5s cubic-bezier(0.55, -0.68, 0.48, 1.682); */
+	transition: all 0.5s cubic-bezier(0, .66, .55, 1.07);
+}
+
+#custom-launch_wofi,
+#custom-launch_firefox,
+#custom-launch_thunderbird,
+#custom-launch_thunar,
+#custom-launch_kitty,
+#custom-lock_screen,
+#custom-light_dark,
+#custom-power_btn,
+#custom-power_profile,
+#custom-weather,
+#custom-myhyprv,
+#window,
+#cpu,
+#disk,
+#custom-updates,
+#memory,
+#clock,
+#battery,
+#pulseaudio,
+#network,
+#tray,
+#temperature,
+#workspaces,
+#idle_inhibitor,
+#backlight {
+	background: rgba(21, 18, 27, 0);
+	opacity: 1;
+	padding: 0px 8px;
+	margin: 0px 3px;
+	border: 0px;
+}
+
+#temperature.critical {
+	color: #e92d4d;
+}
+
+#workspaces {
+	padding-right: 0px;
+	padding-left: 5px;
+}
+
+#window {
+	border-radius: 10px;
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+#custom-launch_firefox,
+#custom-launch_thunderbird,
+#custom-launch_thunar,
+#custom-launch_wofi,
+#custom-launch_kitty,
+#custom-weather {
+	margin-left: 0px;
+	border-right: 0px;
+	font-size: 24px;
+	margin-right: 20px;
+}
+
+#custom-launch_firefox,
+#custom-launch_kitty {
+	font-size: 20px;
+}
