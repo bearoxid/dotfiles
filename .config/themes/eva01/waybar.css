@@ -1,0 +1,151 @@
+/* das for all css files nehmen */
+@define-color main-bg-color rgba(95, 62, 124, 0.6);
+/* @define-color second-bg-color rgb (73, 52, 111); */
+@define-color second-bg-color rgba(72, 38, 134, 1);
+@define-color main-fg-color rgb (138, 97, 225);
+@define-color accent-color rgb (101, 198, 127);
+@define-color accent-color-brighter rgb (124, 244, 156);
+
+* {
+	border: none;
+	border-radius: 0;
+	font-family: "JetBrainsMono Nerd Font";
+	font-weight: bold;
+	font-size: 16px;
+	min-height: 0;
+}
+
+window#waybar {
+	background: rgba(21, 18, 27, 0);
+	color: #f6f7fc;
+}
+
+window#waybar>box {
+	/* padding-top: 5px; */
+}
+
+#custom-launch_wofi,
+#custom-launch_firefox,
+#custom-launch_thunderbird,
+#custom-launch_thunar,
+#custom-launch_kitty,
+#custom-lock_screen,
+#custom-light_dark,
+#custom-power_btn,
+#custom-power_profile,
+#custom-weather,
+#custom-myhyprv,
+#window,
+#cpu,
+#disk,
+#custom-updates,
+#memory,
+#clock,
+#battery,
+#pulseaudio,
+#network,
+#tray,
+#temperature,
+#workspaces,
+#idle_inhibitor,
+#backlight,
+#hardware,
+#system {
+	/* background: rgba(21, 18, 27, 0); */
+	padding: 0px 8px;
+	margin: 0px 3px;
+	border: 0px;
+}
+
+.modules-left {
+	border-radius: 16px;
+}
+
+.modules-center {
+	background: rgba(157, 9, 17, 0);
+	border: 0px solid #fff;
+	border-radius: 5px;
+}
+
+.modules-right {}
+
+#hardware,
+#system,
+#workspaces {
+	background-color: @main-bg-color;
+	border-radius: 16px;
+}
+
+tooltip {
+	/* background-colorconfig: @main-bg-color; */
+	background-color: #1E1623;
+	/* TODO: nicht zufrieden */
+	border-radius: 10px;
+}
+
+tooltip label {
+	color: #cdd6f4;
+}
+
+#workspaces {
+	padding: 0;
+}
+
+
+#workspaces button {
+	padding: 0px 12px;
+	/* color: #f6f7fc; */
+	color: #151515;
+	color: #fff;
+	border-radius: 16px;
+
+	animation: gradient_f 20s ease-in infinite;
+	transition: all 0.5s cubic-bezier(0.25, 1, 0.50, 1);
+}
+
+#workspaces button.active {
+	padding: 0px 20px;
+	color: #151515;
+	/* background: @accent-color; */
+	background: @accent-color-brighter;
+	opacity: 1;
+	border-radius: 16px;
+
+	animation: gradient_f 20s ease-in infinite;
+	transition: all 0.5s cubic-bezier(0.25, 1, 0.50, 1);
+}
+
+#workspaces button:hover {
+	background: @main-fg-color;
+	border-radius: 10px;
+
+	animation: gradient_f 20s ease-in infinite;
+	transition: all 0.5s cubic-bezier(0.25, 1, 0.50, 1);
+}
+
+#temperature.critical {
+	color: #e92d4d;
+}
+
+#window {
+	border-radius: 10px;
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+#custom-launch_firefox,
+#custom-launch_thunderbird,
+#custom-launch_thunar,
+#custom-launch_wofi,
+#custom-launch_kitty,
+#custom-weather {
+	margin-left: 0px;
+	border-right: 0px;
+	font-size: 24px;
+	margin-right: 20px;
+}
+
+#custom-launch_firefox,
+#custom-launch_kitty {
+	font-size: 20px;
+}
