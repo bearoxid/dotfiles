@@ -57,4 +57,5 @@ alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 alias dotaddal="dotfiles add -u"
 alias dotcom="dotfiles commit -m"
 alias dotstat="dotfiles status"
+alias dotgit="xdg-open https://github.com/bearoxid/dotfiles"
 
