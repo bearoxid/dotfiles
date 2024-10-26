@@ -1,0 +1,112 @@
+#!/bin/sh
+# simple themeswitching script
+# checks if a config file exists in the next theme and ln that file
+
+# order of themes -> name of the directories
+# seperate through ';'
+THEMEORDER="eva01;nerv"
+
+# get the current theme name
+# CURRENT_THEME=$(readlink -f $HOME/.config/waybar/style.css | cut -d '/' -f6)
+CURRENT_THEME_FILE="$HOME/.config/themes/current_theme"
+CURRENT_THEME=$(<"$CURRENT_THEME_FILE")
+
+# Convert THEMEORDER string to an array
+IFS=';' read -ra THEMES <<< "$THEMEORDER"
+
+# find the index of the current theme
+index=-1
+for i in "${!THEMES[@]}"; do
+    if [ "${THEMES[i]}" == "$CURRENT_THEME" ]; then
+        index=$i
+        break
+    fi
+done
+
+
+# Calculate the next theme index (wraps around if at the end)
+# if theme/file does not exist -> shows
+NEXT_INDEX=$(( (index + 1) % ${#THEMES[@]} ))
+SWITCHTO="${THEMES[NEXT_INDEX]}"
+
+# Write the next theme to the current theme file
+
+# index -1 -> start from 'top'
+# theme not found -> exit
+# show a message
+if [ $index -eq -1 ]; then
+    notify-send -h string:x-canonical-private-synchronous:sys-notify -u low "Error: Current theme '$CURRENT_THEME' not found in THEMEORDER.\nStarted from begining"
+fi
+if [ ! -d "$HOME/.config/themes/$SWITCHTO" ]; then
+    notify-send -h string:x-canonical-private-synchronous:sys-notify -u low "Error: Theme '$SWITCHTO' doesn't exists."
+    exit 1
+else
+    notify-send -h string:x-canonical-private-synchronous:sys-notify -u low "switching to $SWITCHTO"
+    echo "$SWITCHTO" > "$CURRENT_THEME_FILE"
+fi
+
+# file paths
+HYPRTHEME=$HOME/.config/themes/$SWITCHTO/hyprtheme.conf
+WAYBARLAYOUT=$HOME/.config/themes/$SWITCHTO/waybar.jsonc
+WAYBARSTYLE=$HOME/.config/themes/$SWITCHTO/waybar.css
+KITTY=$HOME/.config/themes/$SWITCHTO/kittytheme.conf
+WOFI=$HOME/.config/themes/$SWITCHTO/wofi.css
+MAKO=$HOME/.config/themes/$SWITCHTO/mako
+
+#set the hyprland theme
+if [ -f $HYPRTHEME ]; then
+    ln -sf $HYPRTHEME $HOME/.config/hypr/hyprtheme.conf
+fi
+
+#set the waybar conf + theme
+if [ -f $WAYBARLAYOUT ]; then
+    ln -sf $WAYBARLAYOUT $HOME/.config/waybar/config.jsonc
+fi
+
+if [ -f $WAYBARSTYLE ]; then
+    ln -sf $WAYBARSTYLE $HOME/.config/waybar/style.css
+fi
+
+#set the kitty theme
+if [ -f $KITTY ]; then
+    ln -sf $KITTY $HOME/.config/kitty/kittytheme.conf
+fi
+
+
+#set the wofi theme
+if [ -f $WOFI ]; then
+    ln -sf $WOFI $HOME/.config/wofi/style.css
+fi
+
+#set the mako theme
+if [ -f $MAKO ]; then
+    ln -sf $MAKO $HOME/.config/mako/config
+fi
+
+#update the sddm image
+# cp -f $HOME/.config/themes/$SWITCHTO/sddm_image /usr/share/sddm/themes/sddm-slice/wallpaper.jpg
+# cp -f $HOME/.config/themes/$SWITCHTO/sddmtheme.conf /usr/share/sddm/themes/sddm-slice/theme.conf
+
+xfconf-query -c xsettings -p /Net/IconThemeName -s "Papirus-Dark"
+gsettings set org.gnome.desktop.interface icon-theme "Papirus-Dark"
+
+xfconf-query -c xsettings -p /Net/ThemeName -s "Adwaita-dark"
+gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"
+
+
+#change the background image and be cool about it ;)
+SET_BG="/home/daniel/.config/themes/$SWITCHTO/wallpaper"
+swww img $SET_BG --transition-fps 60 --transition-type wipe --transition-duration 2
+
+
+#reset mako
+sleep 1
+pkill mako
+mako &
+
+#restart the waybar
+# not necessary if hyprland is getting restarted
+if [ ! -f $HYPRTHEME ]; then
+    pkill waybar
+    waybar &
+fi
