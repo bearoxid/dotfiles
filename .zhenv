@@ -1,0 +1,5 @@
+##
+## ENV Var for DOTFILES
+##
+
+export ZDOTDIR=~/.config/zsh/
