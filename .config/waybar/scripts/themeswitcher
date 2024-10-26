@@ -52,10 +52,11 @@ WAYBARSTYLE=$HOME/.config/themes/$SWITCHTO/waybar.css
 KITTY=$HOME/.config/themes/$SWITCHTO/kittytheme.conf
 WOFI=$HOME/.config/themes/$SWITCHTO/wofi.css
 MAKO=$HOME/.config/themes/$SWITCHTO/mako
+WLOGOUT=$HOME/.config/themes/$SWITCHTO/wlogout.css
 
 #set the hyprland theme
 if [ -f $HYPRTHEME ]; then
-    ln -sf $HYPRTHEME $HOME/.config/hypr/hyprtheme.conf
+    ln -sf $HYPRTHEME $HOME/.config/hypr/config/hyprtheme.conf
 fi
 
 #set the waybar conf + theme
@@ -81,6 +82,11 @@ fi
 #set the mako theme
 if [ -f $MAKO ]; then
     ln -sf $MAKO $HOME/.config/mako/config
+fi
+
+#set the wlogout theme
+if [ -f $WLOGOUT ]; then
+    ln -sf $WLOGOUT $HOME/.config/wlogout/style.css
 fi
 
 #update the sddm image

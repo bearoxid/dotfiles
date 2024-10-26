@@ -8,7 +8,9 @@ window {
 	/* background-color: #cdd6f4; */
 	background-color: @main-bg-color;
 	border-radius: 20px;
-	font-size: 20px;
+	font-family: "Geist Mono";
+	font-size: 18px;
+	font-weight: bold;
 }
 
 #input {
@@ -20,10 +22,10 @@ window {
 	border: none;
 	border-radius: 15px;
 	color: #cdd6f4;
-	font-weight: bold;
 	background-color: rgba(101, 61, 136, 0.4);
 	outline: none;
 	text-decoration: none;
+	font-weight: normal;
 }
 
 #input:focus {
@@ -36,7 +38,6 @@ window {
 	margin-top: 0px;
 	border: 10px solid transparent;
 	color: #cdd6f4;
-	font-weight: bold;
 	background: none;
 	border-radius: 15px;
 }

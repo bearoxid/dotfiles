@@ -40,7 +40,6 @@ alias la="ls -a"
 alias lla="ls -la"
 alias lt="ls --tree"
 alias anics="ani-cli -c --skip"
-alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 
 eval $(thefuck --alias)
 alias f="fuck"
@@ -52,3 +51,10 @@ alias n="nvim"
 
 # SUFFIX ALIASES
 alias -s txt=code
+
+# dotfiles
+alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+alias dotaddal="dotfiles add -u"
+alias dotcom="dotfiles commit -m"
+alias dotstat="dotfiles status"
+
