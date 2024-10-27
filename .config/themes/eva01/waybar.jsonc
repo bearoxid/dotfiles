@@ -211,7 +211,7 @@
 
     "custom/themeswitcher": {
         "format": "󰐾",
-        "on-click": "~/.config/hypr/hypr_util setbg",
+        "on-click": "~/.config/hypr/scripts/hypr_util setbg",
         "on-click-right": "~/.config/waybar/scripts/themeswitcher",
         "tooltip": false
     }

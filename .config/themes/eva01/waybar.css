@@ -1,10 +1,11 @@
 /* das for all css files nehmen */
-@define-color main-bg-color rgba(95, 62, 124, 0.6);
-/* @define-color second-bg-color rgb (73, 52, 111); */
+/* @define-color main-bg-color rgba(95, 62, 124, 0.6); */
+@define-color main-bg-color rgba(76, 35, 111, 0.6);
+/* TODO: needs work */
 @define-color second-bg-color rgba(72, 38, 134, 1);
-@define-color main-fg-color rgb (138, 97, 225);
-@define-color accent-color rgb (101, 198, 127);
-@define-color accent-color-brighter rgb (124, 244, 156);
+@define-color main-fg-color rgb(138, 97, 225);
+@define-color accent-color rgb(101, 198, 127);
+@define-color accent-color-brighter rgb(124, 244, 156);
 
 * {
 	border: none;
