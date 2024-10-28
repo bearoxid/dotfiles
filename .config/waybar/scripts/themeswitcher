@@ -4,7 +4,7 @@
 
 # order of themes -> name of the directories
 # seperate through ';'
-THEMEORDER="eva01;nerv"
+THEMEORDER="dystopian;nerv"
 
 # get the current theme name
 # CURRENT_THEME=$(readlink -f $HOME/.config/waybar/style.css | cut -d '/' -f6)
