@@ -115,4 +115,6 @@ mako &
 if [ ! -f $HYPRTHEME ]; then
     pkill waybar
     waybar &
+else 
+    hyprctl reload
 fi
