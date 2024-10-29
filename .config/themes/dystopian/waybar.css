@@ -65,7 +65,7 @@ window#waybar>box {
 
 tooltip {
 	/* background-colorconfig: @main-bg-color; */
-	background-color: #1E1623;
+	background-color: #1E2328;
 	/* TODO: nicht zufrieden */
 	border-radius: 10px;
 }
