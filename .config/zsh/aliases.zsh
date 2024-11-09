@@ -14,7 +14,7 @@ alias mtar='tar -zcvf' # mtar <archive_compress>
 alias utar='tar -zxvf' # utar <archive_decompress> <file_list>
 alias z='zip -r' # z <archive_compress> <file_list>
 alias uz='unzip' # uz <archive_decompress> -d <dir>
-alias sr='source ~/.config/zsh/env.zsh'
+alias sr='source ~/.zshrc'
 alias ..="cd .."
 alias ...="cd ../.."
 alias .3="cd ../../.."
@@ -40,7 +40,7 @@ alias la="ls -a"
 alias lla="ls -la"
 alias lt="ls --tree"
 alias anics="ani-cli -c --skip"
-
+alias ssh-start="eval \"$(ssh-agent -s)\""
 eval $(thefuck --alias)
 alias f="fuck"
 alias ff="fastfetch"
