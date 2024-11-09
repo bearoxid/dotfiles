@@ -1,7 +1,10 @@
-# Before running tmux
+# TMUX config
+heavily inspired by https://github.com/samoshkin/tmux-config
+
+## Config Requirements:
 Tmux Plugin Manager must be installed under '$HOME/.config/tmux/plugins/'
 
-### Installation
+### Installation of TPM
 Clone TPM:
 
 ```bash
