@@ -16,4 +16,4 @@ export WEBKIT_DISABLE_COMPOSITING_MODE=1
 
 # export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/.vimrc" | source $MYVIMRC'
 
-
+unsetopt BEEP
