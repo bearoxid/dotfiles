@@ -6,8 +6,8 @@ export PATH="$HOME/.config/nvim/bin:$HOME/.cargo/bin:$PATH"
 
 export SUDO_PROMPT="passwd: "
 export TERMINAL="kitty"
-export BROWSER="brave"
-export VISUAL="vim"
+export BROWSER="firefox"
+export VISUAL="nvim"
 export EDITOR="vim"
 export SUDO_EDITOR="vim"
 
